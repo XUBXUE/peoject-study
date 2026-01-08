@@ -15,7 +15,7 @@
     "lint": "eslint . --fix --cache",
     "format": "prettier --write --experimental-cli src/",
     "prepare": "husky",
-    "eslint": "eslint ."
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "pinia": "^3.0.4",
@@ -23,6 +23,8 @@
     "vue-router": "^4.6.4"
   },
   "devDependencies": {
+    "@commitlint/cli": "^20.3.0",
+    "@commitlint/config-conventional": "^20.3.0",
     "@tsconfig/node24": "^24.0.3",
     "@types/node": "^24.10.4",
     "@vitejs/plugin-vue": "^6.0.3",
@@ -41,5 +43,8 @@
     "vite": "^7.3.0",
     "vite-plugin-vue-devtools": "^8.0.5",
     "vue-tsc": "^3.2.1"
+  },
+  "lint-staged": {
+    "*.{vue,js,ts}": "npx eslint --fix"
   }
 }
